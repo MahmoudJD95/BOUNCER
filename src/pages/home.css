@@ -1,0 +1,19 @@
+.iphone-img{
+    height: 300px;
+    width: 300px;
+    /* background-image: url(/assest/MaskGroup.svg); */
+}
+
+.content-name{
+    color: white;
+}
+.content-details{
+    color: white;
+}
+
+.box{
+    display: flex;
+    justify-content: center;
+   
+
+}
