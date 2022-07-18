@@ -1,42 +1,36 @@
-import React from 'react';
-import { Button, Box, Stack, Typography } from '@mui/material';
+import React, { useState } from 'react';
+import { Box, Typography, Tabs, Tab } from '@mui/material';
 import { makeStyles } from '@mui/styles';
-import { useSelector, useDispatch } from 'react-redux';
+// import { useSelector, useDispatch } from 'react-redux';
 import './navbar.css';
 const useStyles = makeStyles({
   categories: {
     display: 'flex',
     justifyContent: 'center',
   },
-  button: {
-    color: 'black !important',
-  },
+  
 });
 export default function NavBar() {
+  const [value, setValue] = React.useState(0);
   const classes = useStyles();
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
   return (
     <>
       <Typography textAlign={'center'} color={'error'} variant="h2">
         BOUNCER
       </Typography>
-      <Stack className={classes.categories} spacing={2} direction="row">
-        <Button variant="text">Me</Button>
-        <Button className={classes.button} variant="text">
-          Store
-        </Button>
-        <Button className={classes.button} variant="text">
-          IPhone
-        </Button>
-        <Button className={classes.button} variant="text">
-          IPad
-        </Button>
-        <Button className={classes.button} variant="text">
-          MacBooks
-        </Button>
-        <Button className={classes.button} variant="text">
-          ACCESORIES
-        </Button>
-      </Stack>
+      <Box sx={{ width: '100%' }} spacing={2} alignContent={'center'} margin={'10px'}>
+        <Tabs value={value} onChange={handleChange} className={classes.taps}>
+          <Tab value="Me" label="Me" />
+          <Tab value="Store" label="Store" />
+          <Tab value="IPhone" label="IPhone" />
+          <Tab value="IPad" label="IPad" />
+          <Tab value="MacBooks" label="MacBooks" />
+          <Tab value="ACCESSORIES" label="ACCESSORIES" />
+        </Tabs>
+      </Box>
     </>
   );
 }
