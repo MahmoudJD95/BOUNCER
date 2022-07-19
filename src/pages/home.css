@@ -1,12 +1,21 @@
-.iphone-img {
-  height: 650px;
-  width: 720px;
- 
+* {
+  box-sizing: border-box;
 }
 
-.content-name {
-  color: white;
+.img-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  height: 100%;
 }
+
+.iphone-img {
+  width: 40%;
+  align-self: flex-end;
+}
+
+.content-name,
 .content-details {
   color: white;
 }
@@ -15,66 +24,58 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0px 100px;
-  position: relative;
 }
 
-.banner-div{
-    width: 1192px;
-    height: 332px;
-    display: flex;
- 
-   
+.banner-div {
+  width: 100%;
+  height: 332px;
+  display: flex;
+  justify-content: center;
 }
-.banner{
+.banner {
+  width: 80%;
+  height: 100%;
 position: relative;
-bottom: 150px;
-right: -130px;
-width: 100%;
-height: 100%;
+bottom: 30%;
 
 }
 
-.box-container{
-    background-color: #2E90E5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0px 100px;
-    height: 650px;
-    margin-top: 50px;
+.box-container {
+  background-color: #2e90e5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  margin-top: 50px;
+  width: 100%;
 }
-.content-div{
-    color: white;
+.content-div {
+  color: white;
 }
 
-
-.information{
-    display: flex;
-    text-align: center;
-    width: 1130px;
-    margin-top: 50px;
-    position: relative;
-    right: -130px;
-  
-
+.information {
+  display: flex;
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 5%;
 }
 .free-shipping {
-    height: 256px;
- margin: 5px;
- width: 33%;
+  height: 256px;
+  margin: 5px;
+  width: 33%;
 }
 .refund {
-    height: 256px;
-    margin: 5px;
-    width: 33%;
+  height: 256px;
+  margin: 5px;
+  width: 30%;
 }
 .support {
-    height: 256px;
-    margin: 5px;
-    width: 33%;
+  height: 256px;
+  margin: 5px;
+  width: 33%;
 }
 
-.MuiTabs-flexContainer{
-    justify-content: center;
+.MuiTabs-flexContainer {
+  justify-content: center;
 }

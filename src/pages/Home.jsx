@@ -5,7 +5,7 @@ import { Box, Typography, Grid, Tabs, Tab } from '@mui/material';
 import './home.css';
 import CardComponent from '../component/Card';
 import StoreInformation from '../component/StoreInformation';
-import Footer from '../component/Footer'
+import Footer from '../component/Footer';
 import img from './MaskGroup.svg';
 import banner from './BANNERS.svg';
 
@@ -16,13 +16,12 @@ const useStyles = makeStyles({
     margin: '0 0 10px 0',
   },
   itemGrid: {
-    width: '1192px !important',
-    position: 'relative',
-    right: '-130px',
+    // width: '80% !important',
+
   },
 });
 export default function Home() {
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState('All');
   const classes = useStyles();
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -31,22 +30,24 @@ export default function Home() {
     <>
       <NavBar />
       <div className={'box'}>
-        <div className="content">
-          <Typography className="content-name" variant="h3">
-            {' '}
-            IPhone X
-          </Typography>
+        <div className="img-content">
+          <div className="content">
+            <Typography className="content-name" variant="h3">
+              {' '}
+              IPhone X
+            </Typography>
 
-          <Typography className="content-details" variant="body">
-            {' '}
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae eius
-            nulla quo et, reiciendis sequi, iste cupiditate architecto aperiam
-            natus quisquam suscipit dicta perferendis vel, asperiores
-            voluptatibus libero totam cumque.
-          </Typography>
+            <Typography className="content-details" variant="body">
+              {' '}
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
+              eius nulla quo et, reiciendis sequi, iste cupiditate architecto
+              aperiam natus quisquam suscipit dicta perferendis vel, asperiores
+              voluptatibus libero totam cumque.
+            </Typography>
+          </div>
+
+          <img className="iphone-img" src={img} alt="iphone" />
         </div>
-
-        <img className="iphone-img" src={img} alt="iphone" />
       </div>
       <div className="banner-div">
         <img className="banner" src={banner} alt="banner" />
@@ -55,12 +56,7 @@ export default function Home() {
         BEST SELLER
       </Typography>
 
-      <Box
-        sx={{ width: '100%' }}
-        spacing={2}
-        alignContent={'center'}
-        margin={'10px'}
-      >
+      <Box sx={{ width: '100%' }} spacing={2} alignContent={'center'} marginBottom={'10px'}>
         <Tabs value={value} onChange={handleChange} className={classes.taps}>
           <Tab value="All" label="All" />
           <Tab value="Mac" label="Mac" />
@@ -70,24 +66,24 @@ export default function Home() {
           <Tab value="ACCESSORIES" label="ACCESSORIES" />
         </Tabs>
       </Box>
-
-      <Grid container spacing={2} className={classes.itemGrid}>
-        <Grid item xs={2} md={4}>
-          <CardComponent />
+      <Box alignItems={'center'} width={'80%'} margin={'0 auto'}>
+        <Grid container spacing={2} className={classes.itemGrid}>
+          <Grid item xs={6} md={3}>
+            <CardComponent />
+          </Grid>
+          <Grid item xs={6} md={3}>
+            <CardComponent />
+          </Grid>
+          <Grid item xs={6} md={3}>
+            <CardComponent />
+          </Grid>
+          <Grid item xs={6} md={3}>
+            <CardComponent />
+          </Grid>
         </Grid>
-        <Grid item xs={2} md={4}>
-          <CardComponent />
-        </Grid>
-        <Grid item xs={2} md={4}>
-          <CardComponent />
-        </Grid>
-        <Grid item xs={2} md={4}>
-          <CardComponent />
-        </Grid>
-      </Grid>
-
+      </Box>
       <StoreInformation />
-      <Footer/>
+      <Footer />
     </>
   );
 }

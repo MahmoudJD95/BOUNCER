@@ -13,17 +13,18 @@ import { makeStyles } from '@mui/styles';
 import mac from '../pages/mac.svg';
 const useStyles = makeStyles({
   ratings: {
-   margin:'0 104px',
-    width: '100%',
-
+    margin: '0 auto',
+    width: '60%',
   },
   rating: {
     width: '100%',
   },
-  price: { display: 'flex' ,justifyContent:'space-around',
-  margin:" 10px 70px"
+  price: {
+    display: 'flex',
+    justifyContent: 'space-around',
 
-},
+    padding: '0 2em',
+  },
 });
 export default function CardComponent() {
   const classes = useStyles();
@@ -48,8 +49,8 @@ export default function CardComponent() {
         </div>
       </CardActions>
       <Box className={classes.price}>
-        <Typography color={'error'}>{'$499'  }</Typography>
-       
+        <Typography color={'error'}>{'$499'}</Typography>
+
         <Typography>{'$599'}</Typography>
       </Box>
     </Card>
