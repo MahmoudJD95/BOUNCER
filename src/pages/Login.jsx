@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
-import { Box, TextField, Typography, Button } from '@mui/material';
-import { Link ,useNavigate} from 'react-router-dom';
+import { Box, TextField, Typography, Button, Alert } from '@mui/material';
+import { Link, useNavigate } from 'react-router-dom';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../FireBase/firebase.js';
 import './login.css';
 
 export default function Login() {
   const [input, setInput] = useState({});
-const navigate=useNavigate()
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
   const userDataHandle = (e) => {
     setInput((prev) => {
       return { ...prev, [e.target.name]: e.target.value };
@@ -16,9 +17,10 @@ const navigate=useNavigate()
   const logInHandle = async () => {
     try {
       await signInWithEmailAndPassword(auth, input.email, input.password);
-      navigate('/')
+      navigate('/');
     } catch (err) {
-      console.log(err.message);
+      const errorMsg = err.message.split(':')[1];
+      setError(errorMsg);
     }
   };
   return (
@@ -32,6 +34,7 @@ const navigate=useNavigate()
         label="Email"
         className="input"
         onChange={userDataHandle}
+        required
       />
       <TextField
         variant="standard"
@@ -40,11 +43,17 @@ const navigate=useNavigate()
         label="password"
         className="input"
         onChange={userDataHandle}
+        required
       />
       <Button variant="outlined" onClick={logInHandle}>
         {' '}
         log in{' '}
       </Button>
+      {error ? (
+        <Alert className="alert" severity="error">
+          {error}
+        </Alert>
+      ) : null}
       <Link to={'/signup'} className="link">
         to sign up
       </Link>

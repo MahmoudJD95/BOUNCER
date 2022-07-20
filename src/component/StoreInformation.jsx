@@ -8,7 +8,7 @@ import support from '../assest/support.svg';
 
 const useStyles = makeStyles({
   iphone: {
-    width: ' 53%',
+    width: ' 40%',
     alignSelf: 'flex-end',
   },
   informationImg: {
