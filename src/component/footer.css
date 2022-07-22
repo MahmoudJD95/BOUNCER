@@ -1,0 +1,45 @@
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  width: 80%;
+  margin: 15px auto 15px auto;
+}
+
+.icons {
+  display: flex;
+  justify-content: flex-start;
+}
+.icons img {
+  padding: 10px;
+}
+
+.bouncer {
+  width: 28%;
+}
+.follow-us {
+  width: 28%;
+  margin-top: 20px;
+}
+.contact-us {
+  width: 28%;
+  margin-top: 20px;
+}
+.footer-bottom {
+  display: flex;
+  position: relative;
+
+  width: 80%;
+
+  margin: 2% auto;
+
+}
+
+
+.cards-pay {
+  display: flex;
+  justify-content: space-between;
+  width: 82%;
+  margin: 0 auto;
+  margin-top: 15px;
+}
